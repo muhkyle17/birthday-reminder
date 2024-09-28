@@ -6,7 +6,7 @@ import NavMobile from '@/src/app/components/NavMobile'
 
 const Navbar = () => {
   return (
-    <div className='flex flex-row w-full items-center'>
+    <div className='px-10 pt-7 md:pt-0 md:px-0 flex flex-row w-full items-center justify-between'>
       <div className='w-1/6 xl:w-1/2 flex flex-row items-center justify-center lg:justify-between lg:pl-16'>
         <Link href='/'>
           <Image
@@ -40,7 +40,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      <NavMobile />
+      <div className='md:hidden'>
+        <NavMobile />
+      </div>
     </div>
   )
 }
