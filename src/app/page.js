@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import Navbar from '@/app/components/Navbar'
+import Navbar from '@/src/app/components/Navbar'
 
 export default function Home() {
   return (
-    <div className='bg-[url("/home/background-home-desktop.jpg")] min-h-screen bg-contain bg-center bg-no-repeat h-screen w-full p-8 pb-20 gap-16 sm:p-20'>
+    <div className='bg-[url("/home/background-home-desktop.jpg")] bg-cover bg-no-repeat w-screen h-screen min-h-screen pt-8 sm:pt-10'>
       <Navbar />
     </div>
   )
