@@ -89,6 +89,10 @@ body {
     line-height: 180%;
     letter-spacing: 0px;
   }
+
+  .nav-button {
+    @apply border-b-2 border-transparent hover:border-b-2 hover:border-b-white py-9 duration-500 transition-all;
+  }
 }
 
 .bellefair-regular {
