@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+
 import Logo from '@/public/shared/logo.svg'
+import NavMobile from '@/src/app/components/NavMobile'
 
 const Navbar = () => {
   return (
@@ -37,6 +39,8 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+
+      <NavMobile />
     </div>
   )
 }
