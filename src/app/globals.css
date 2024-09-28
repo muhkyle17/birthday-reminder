@@ -50,4 +50,11 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .typography-preset-one {
+    font-family: 'Bellefair', sans-serif;
+    font-size: 144px;
+    line-height: 171.9%;
+    letter-spacing: 0px;
+  }
 }

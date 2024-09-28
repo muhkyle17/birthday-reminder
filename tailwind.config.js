@@ -19,16 +19,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    ({ addComponents }) => {
-      addComponents({
-        '.typography-preset-one': {
-          'font-family': 'Bellefair',
-          'font-size': '144px',
-          'line-height': '171.9%',
-          'letter-spacing': '0px',
-        },
-      })
-    },
-  ],
+  plugins: [],
 }
