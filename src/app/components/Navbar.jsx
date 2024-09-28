@@ -12,7 +12,7 @@ const Navbar = () => {
             alt='Navigation Logo'
             width={48}
             height={48}
-            className='opacity-50 mb-1 hover:opacity-65'
+            className='opacity-50 hover:opacity-65'
           />
         </Link>
 
