@@ -4,19 +4,27 @@ import Logo from '@/public/shared/logo.svg'
 
 const Navbar = () => {
   return (
-    <div className='flex flex-row w-full items-center pl-16'>
-      <div className='w-1/2 flex flex-row items-center justify-between'>
-        <Image src={Logo} alt='Navigation Logo' width={48} height={48} className='opacity-50' />
+    <div className='flex flex-row w-full items-center'>
+      <div className='w-1/6 xl:w-1/2 flex flex-row items-center justify-center lg:justify-between lg:pl-16'>
+        <Link href='/'>
+          <Image
+            src={Logo}
+            alt='Navigation Logo'
+            width={48}
+            height={48}
+            className='opacity-50 mb-1 hover:opacity-65'
+          />
+        </Link>
 
-        <hr className='bg-white opacity-30 w-5/6 mb-1' />
+        <hr className='bg-white opacity-30 w-5/6 mb-1 hidden xl:block' />
       </div>
 
-      <div className='w-1/2 flex flex-row items-center gap-24 h-24 backdrop-blur-3xl'>
-        <hr className='bg-white w-10 opacity-30 mb-1' />
+      <div className='w-5/6 hidden xl:w-1/2 md:flex flex-row items-center justify-center lg:justify-end gap-24 h-24 bg-white bg-opacity-5 xl:backdrop-blur-3xl lg:pr-16'>
+        <hr className='bg-white w-10 opacity-30 mb-1 hidden xl:block' />
 
         <div className='flex flex-row items-center gap-10 uppercase'>
           <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
-            <span className='typography-preset-eight font-bold'>00</span>Home
+            <span className='hidden lg:hidden typography-preset-eight font-bold'>00</span>Home
           </Link>
           <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
             <span className='typography-preset-eight font-bold'>01</span>Destination
