@@ -21,7 +21,7 @@ const Navbar = () => {
         <hr className='bg-white opacity-30 w-5/6 mb-1 hidden xl:block' />
       </div>
 
-      <div className='w-5/6 hidden xl:w-1/2 md:flex flex-row items-center justify-end pr-8 xl:justify-between h-24 bg-white bg-opacity-5 xl:backdrop-blur-3xl lg:pr-16'>
+      <div className='w-5/6 hidden xl:w-1/2 md:flex flex-row items-center justify-end pr-8 xl:justify-between h-24 bg-white bg-opacity-5 lg:backdrop-blur-3xl lg:pr-16'>
         <hr className='bg-white w-10 opacity-30 mb-1 hidden xl:block' />
 
         <div className='flex flex-row items-center gap-10 uppercase'>
