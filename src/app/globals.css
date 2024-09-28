@@ -57,4 +57,25 @@ body {
     line-height: 171.9%;
     letter-spacing: 0px;
   }
+
+  .typography-preset-three {
+    font-family: 'Bellefair', sans-serif;
+    font-size: 100px;
+    line-height: 114.6%;
+    letter-spacing: 0px;
+  }
+
+  .typography-preset-four {
+    font-family: 'Bellefair', sans-serif;
+    font-size: 56px;
+    line-height: 64.2%;
+    letter-spacing: 0px;
+  }
+
+  .typography-preset-five {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    line-height: 33.6%;
+    letter-spacing: 4px;
+  }
 }
