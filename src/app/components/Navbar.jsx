@@ -19,12 +19,12 @@ const Navbar = () => {
         <hr className='bg-white opacity-30 w-5/6 mb-1 hidden xl:block' />
       </div>
 
-      <div className='w-5/6 hidden xl:w-1/2 md:flex flex-row items-center justify-center lg:justify-end gap-24 h-24 bg-white bg-opacity-5 xl:backdrop-blur-3xl lg:pr-16'>
+      <div className='w-5/6 hidden xl:w-1/2 md:flex flex-row items-center justify-end pr-8 xl:justify-between h-24 bg-white bg-opacity-5 xl:backdrop-blur-3xl lg:pr-16'>
         <hr className='bg-white w-10 opacity-30 mb-1 hidden xl:block' />
 
         <div className='flex flex-row items-center gap-10 uppercase'>
           <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
-            <span className='hidden lg:hidden typography-preset-eight font-bold'>00</span>Home
+            <span className='hidden lg:block typography-preset-eight font-bold'>00</span>Home
           </Link>
           <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
             <span className='typography-preset-eight font-bold'>01</span>Destination
