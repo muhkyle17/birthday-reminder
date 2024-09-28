@@ -58,17 +58,24 @@ body {
     letter-spacing: 0px;
   }
 
-  .typography-preset-three {
+  .typography-preset-two {
     font-family: 'Bellefair', sans-serif;
     font-size: 100px;
     line-height: 114.6%;
     letter-spacing: 0px;
   }
 
-  .typography-preset-four {
+  .typography-preset-three {
     font-family: 'Bellefair', sans-serif;
     font-size: 56px;
     line-height: 64.2%;
+    letter-spacing: 0px;
+  }
+
+  .typography-preset-four {
+    font-family: 'Bellefair', sans-serif;
+    font-size: 32px;
+    line-height: 36.7%;
     letter-spacing: 0px;
   }
 
@@ -77,5 +84,33 @@ body {
     font-size: 28px;
     line-height: 33.6%;
     letter-spacing: 4px;
+  }
+
+  .typography-preset-six {
+    font-family: 'Bellefair', sans-serif;
+    font-size: 28px;
+    line-height: 32.1%;
+    letter-spacing: 0px;
+  }
+
+  .typography-preset-seven {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    line-height: 16.8%;
+    letter-spacing: 2px;
+  }
+
+  .typography-preset-eight {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    line-height: 19.2%;
+    letter-spacing: 2px;
+  }
+
+  .typography-preset-nine {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 0px;
   }
 }
