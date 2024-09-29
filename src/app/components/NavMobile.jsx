@@ -79,13 +79,13 @@ const NavMobile = () => {
             <RxCross2 className='w-8 h-8' />
           </div>
 
-          <div className='mt-36 ml-14 flex flex-col gap-14'>
+          <div className='mt-36 pl-12 w-full flex flex-col gap-14'>
             {navigation.map(item => {
               return (
-                <li key={item.id}>
+                <li key={item.id} className='h-full'>
                   <button
                     onClick={() => router.push(`${item.href}`)}
-                    className='cursor-pointer uppercase typography-preset-eight text-left flex flex-row gap-3'>
+                    className='cursor-pointer uppercase typography-preset-eight text-left flex flex-row gap-3 h-full py-3 w-full hover:border-r-4 border-white'>
                     <span className='font-bold'>{item.id}</span>
                     {item.name}
                   </button>
