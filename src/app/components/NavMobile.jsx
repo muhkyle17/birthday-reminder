@@ -35,20 +35,24 @@ const NavMobile = () => {
 
   const navigation = [
     {
+      id: '00',
       href: '/',
-      name: '00 Home',
+      name: 'Home',
     },
     {
+      id: '01',
       href: '/',
-      name: '01 Destination',
+      name: 'Destination',
     },
     {
+      id: '02',
       href: '/',
-      name: '02 Crew',
+      name: 'Crew',
     },
     {
+      id: '03',
       href: '/',
-      name: '03 Technology',
+      name: 'Technology',
     },
   ]
 
@@ -70,22 +74,25 @@ const NavMobile = () => {
           animate={isOpen ? 'visible' : ''}
           className={`${
             isOpen ? 'right-0' : '-right-full'
-          } fixed top-0 bottom-0 w-full flex flex-col justify-start items-center transition-all duration-500 overflow-hidden`}>
+          } fixed top-0 bottom-0 w-full flex flex-col justify-start items-start transition-all duration-500 overflow-hidden`}>
           <div onClick={() => setIsOpen(false)} className='cursor-pointer absolute top-8 right-8'>
             <RxCross2 className='w-8 h-8' />
           </div>
 
-          {navigation.map((item, index) => {
-            return (
-              <li key={index} className='mb-8'>
-                <button
-                  onClick={() => router.push(`${item.href}`)}
-                  className='text-xl cursor-pointer capitalize '>
-                  {item.name}
-                </button>
-              </li>
-            )
-          })}
+          <div className='mt-36 ml-14 flex flex-col gap-14'>
+            {navigation.map(item => {
+              return (
+                <li key={item.id}>
+                  <button
+                    onClick={() => router.push(`${item.href}`)}
+                    className='cursor-pointer uppercase typography-preset-eight text-left flex flex-row gap-3'>
+                    <span className='font-bold'>{item.id}</span>
+                    {item.name}
+                  </button>
+                </li>
+              )
+            })}
+          </div>
         </motion.ul>
       </motion.div>
     </nav>
