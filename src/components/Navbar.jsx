@@ -12,17 +12,17 @@ const navigation = [
   },
   {
     id: '01',
-    href: '/',
+    href: '/destination',
     name: 'Destination',
   },
   {
     id: '02',
-    href: '/',
+    href: '/crew',
     name: 'Crew',
   },
   {
     id: '03',
-    href: '/',
+    href: '/technology',
     name: 'Technology',
   },
 ]
