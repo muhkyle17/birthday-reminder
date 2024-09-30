@@ -4,6 +4,29 @@ import Link from 'next/link'
 import Logo from '../../public/shared/logo.svg'
 import NavMobile from '@/components/NavMobile'
 
+const navigation = [
+  {
+    id: '00',
+    href: '/',
+    name: 'Home',
+  },
+  {
+    id: '01',
+    href: '/',
+    name: 'Destination',
+  },
+  {
+    id: '02',
+    href: '/',
+    name: 'Crew',
+  },
+  {
+    id: '03',
+    href: '/',
+    name: 'Technology',
+  },
+]
+
 const Navbar = () => {
   return (
     <div className='px-10 pt-7 md:pt-0 md:px-0 flex flex-row w-full items-center justify-between'>
@@ -25,18 +48,17 @@ const Navbar = () => {
         <hr className='bg-white w-10 opacity-30 mb-1 hidden xl:block' />
 
         <div className='flex flex-row items-center gap-10 uppercase'>
-          <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
-            <span className='hidden lg:block typography-preset-eight font-bold'>00</span>Home
-          </Link>
-          <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
-            <span className='typography-preset-eight font-bold'>01</span>Destination
-          </Link>
-          <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
-            <span className='typography-preset-eight font-bold'>02</span>Crew
-          </Link>
-          <Link href='/' className='nav-button flex flex-row gap-2 items-baseline'>
-            <span className='typography-preset-eight font-bold'>03</span>Technology
-          </Link>
+          {navigation.map(item => {
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                className='nav-button flex flex-row gap-2 items-baseline'>
+                <span className='typography-preset-eight font-bold'>{item.id}</span>
+                {item.name}
+              </Link>
+            )
+          })}
         </div>
       </div>
 
