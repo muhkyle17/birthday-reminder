@@ -28,7 +28,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.0 }}
               href='/'
-              className='relative rounded-full cursor-pointer typography-preset-four bg-white text-primary w-[200px] h-[200px] md:w-[272px] md:h-[272px] flex items-center justify-center'>
+              className='relative rounded-full cursor-pointer typography-preset-four bg-white uppercase text-primary w-[200px] h-[200px] md:w-[272px] md:h-[272px] flex items-center justify-center'>
               <motion.div
                 whileHover={{ scale: 1.5 }}
                 className='absolute rounded-full bg-[#ffffff1b] w-[200px] h-[200px] md:w-[272px] md:h-[272px]'></motion.div>
