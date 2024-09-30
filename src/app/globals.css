@@ -95,6 +95,14 @@ body {
   }
 }
 
+.responsive-font-size {
+  font-size: 21px !important;
+
+  @media (min-width: 640px) {
+    font-size: 28px !important;
+  }
+}
+
 .bellefair-regular {
   font-family: 'Bellefair', serif;
   font-weight: 400;
