@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import * as motion from 'framer-motion/client'
+
 import Navbar from '@/src/app/components/Navbar'
 
 export default function Home() {
@@ -22,9 +25,15 @@ export default function Home() {
           </div>
 
           <div className='flex items-center justify-center xl:justify-end xl:pr-10 sm:w-1/2'>
-            <div className='uppercase text-primary rounded-full bg-white typography-preset-four w-[200px] h-[200px] md:w-[272px] md:h-[272px] flex items-center justify-center'>
-              <p>Explore</p>
-            </div>
+            <motion.a
+              whileHover={{ scale: 1.0 }}
+              href='/'
+              className='relative rounded-full cursor-pointer typography-preset-four bg-white text-primary w-[200px] h-[200px] md:w-[272px] md:h-[272px] flex items-center justify-center'>
+              <motion.div
+                whileHover={{ scale: 1.5 }}
+                className='absolute rounded-full bg-[#ffffff1b] w-[200px] h-[200px] md:w-[272px] md:h-[272px]'></motion.div>
+              Explore
+            </motion.a>
           </div>
         </div>
       </div>
