@@ -3,10 +3,10 @@ import Navbar from '@/src/app/components/Navbar'
 export default function Home() {
   return (
     <div className='bg-[url("/home/background-home-mobile.jpg")] sm:bg-[url("/home/background-home-tablet.jpg")] lg:bg-[url("/home/background-home-desktop.jpg")] bg-cover lg:bg-right bg-no-repeat w-screen h-screen min-h-screen '>
-      <div className='flex flex-col justify-between items-center pt-0 lg:pt-10 w-screen h-screen'>
+      <div className='flex flex-col items-center lg:justify-between pt-0 lg:pt-10 w-screen lg:h-screen'>
         <Navbar />
 
-        <div className='container lg:px-16 pb-10 lg:pb-32 flex flex-col items-center lg:flex-row gap-10 lg:gap-0 justify-between w-full'>
+        <div className='container mt-20 lg:mt-0 lg:px-16 pb-10 lg:pb-32 flex flex-col items-center lg:flex-row gap-10 lg:gap-0 justify-between w-full'>
           <div className='w-[80%] xl:w-1/2'>
             <p className='typography-preset-five uppercase text-center lg:text-left'>
               So, you want to travel to
