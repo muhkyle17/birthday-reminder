@@ -5,7 +5,7 @@ import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 
-const NavMobile = () => {
+const NavMobile = ({ navigation }) => {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
 
@@ -32,29 +32,6 @@ const NavMobile = () => {
       },
     },
   }
-
-  const navigation = [
-    {
-      id: '00',
-      href: '/',
-      name: 'Home',
-    },
-    {
-      id: '01',
-      href: '/',
-      name: 'Destination',
-    },
-    {
-      id: '02',
-      href: '/',
-      name: 'Crew',
-    },
-    {
-      id: '03',
-      href: '/',
-      name: 'Technology',
-    },
-  ]
 
   return (
     <nav className='relative'>

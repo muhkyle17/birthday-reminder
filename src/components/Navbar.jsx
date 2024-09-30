@@ -63,7 +63,7 @@ const Navbar = () => {
       </div>
 
       <div className='md:hidden'>
-        <NavMobile />
+        <NavMobile navigation={navigation} />
       </div>
     </div>
   )
