@@ -1,7 +1,6 @@
-import Link from 'next/link'
 import * as motion from 'framer-motion/client'
 
-import Navbar from '@/src/app/components/Navbar'
+import Navbar from '@/components/Navbar'
 
 export default function Home() {
   return (
