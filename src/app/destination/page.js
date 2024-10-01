@@ -1,3 +1,5 @@
+'use client'
+import { useState } from 'react'
 import Image from 'next/image'
 
 import Navbar from '@/components/Navbar'
@@ -46,39 +48,43 @@ const tabs = [
 ]
 
 const HoverMiniTab = () => {
+  const [activeTab, setActiveTab] = useState(null)
+
   return (
-    <div className='flex flex-row gap-28'>
-      <Image src={Moon} />
-      <div className='flex flex-col'>
-        <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
-          <div>Moon</div>
-          <div>Mars</div>
-          <div>Europa</div>
-          <div>Titan</div>
-        </div>
+    <>
+      {tabs.map(tab => {
+        return (
+          <div key={tab.id} className='flex flex-row gap-28'>
+            <Image src={tab.image} />
+            <div className='flex flex-col'>
+              <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
+                <div>Moon</div>
+                <div>Mars</div>
+                <div>Europa</div>
+                <div>Titan</div>
+              </div>
 
-        <h1 className='typography-preset-two uppercase mt-10'>Moon</h1>
+              <h1 className='typography-preset-two uppercase mt-10'>{tab.label}</h1>
 
-        <p className='typography-preset-nine text-secondary'>
-          See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain
-          perspective and come back refreshed. While you’re there, take in some history by visiting
-          the Luna 2 and Apollo 11 landing sites.
-        </p>
+              <p className='typography-preset-nine text-secondary'>{tab.description}</p>
 
-        <div className='mt-10 bg-[#ffffff8a] h-[0.5px]' />
+              <div className='mt-10 bg-[#ffffff8a] h-[0.5px]' />
 
-        <div className='mt-12 uppercase flex flex-row gap-20'>
-          <div className='flex flex-col gap-8'>
-            <p className='typography-preset-seven text-secondary'>Avg. Distance</p>
-            <p className='typography-preset-six'>384,400 km</p>
+              <div className='mt-12 uppercase flex flex-row gap-20'>
+                <div className='flex flex-col gap-8'>
+                  <p className='typography-preset-seven text-secondary'>Avg. Distance</p>
+                  <p className='typography-preset-six'>{tab.avgDistance} km</p>
+                </div>
+                <div className='flex flex-col gap-8'>
+                  <p className='typography-preset-seven text-secondary'>Est. Travel Time</p>
+                  <p className='typography-preset-six'>{tab.estTravelTime} days</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className='flex flex-col gap-8'>
-            <p className='typography-preset-seven text-secondary'>Est. Travel Time</p>
-            <p className='typography-preset-six'>3 days</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        )
+      })}
+    </>
   )
 }
 
