@@ -48,43 +48,46 @@ const tabs = [
 ]
 
 const HoverMiniTab = () => {
-  const [activeTab, setActiveTab] = useState(null)
+  const [activeTab, setActiveTab] = useState(1)
+  console.log(activeTab, 'activeTab')
 
+  const tabContent = tabs.find(tab => tab.id === activeTab)
   return (
-    <>
-      {tabs.map(tab => {
-        return (
-          <div key={tab.id} className='flex flex-row gap-28'>
-            <Image src={tab.image} />
-            <div className='flex flex-col'>
-              <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
-                <div>Moon</div>
-                <div>Mars</div>
-                <div>Europa</div>
-                <div>Titan</div>
+    <div className='flex flex-row gap-28'>
+      {activeTab && (
+        <>
+          <Image src={tabContent?.image} />
+          <div className='flex flex-col'>
+            <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
+              {tabs.map(tab => (
+                <p
+                  className={`cursor-pointer ${activeTab === tabContent.id ? '' : ''}`}
+                  onMouseEnter={() => setActiveTab(tab.id)}>
+                  {tab.label}
+                </p>
+              ))}
+            </div>
+
+            <h1 className='typography-preset-two uppercase mt-10'>{tabContent.label}</h1>
+
+            <p className='typography-preset-nine text-secondary'>{tabContent.description}</p>
+
+            <div className='mt-10 bg-[#ffffff8a] h-[0.5px]' />
+
+            <div className='mt-12 uppercase flex flex-row gap-20'>
+              <div className='flex flex-col gap-8'>
+                <p className='typography-preset-seven text-secondary'>Avg. Distance</p>
+                <p className='typography-preset-six'>{tabContent.avgDistance} km</p>
               </div>
-
-              <h1 className='typography-preset-two uppercase mt-10'>{tab.label}</h1>
-
-              <p className='typography-preset-nine text-secondary'>{tab.description}</p>
-
-              <div className='mt-10 bg-[#ffffff8a] h-[0.5px]' />
-
-              <div className='mt-12 uppercase flex flex-row gap-20'>
-                <div className='flex flex-col gap-8'>
-                  <p className='typography-preset-seven text-secondary'>Avg. Distance</p>
-                  <p className='typography-preset-six'>{tab.avgDistance} km</p>
-                </div>
-                <div className='flex flex-col gap-8'>
-                  <p className='typography-preset-seven text-secondary'>Est. Travel Time</p>
-                  <p className='typography-preset-six'>{tab.estTravelTime} days</p>
-                </div>
+              <div className='flex flex-col gap-8'>
+                <p className='typography-preset-seven text-secondary'>Est. Travel Time</p>
+                <p className='typography-preset-six'>{tabContent.estTravelTime} days</p>
               </div>
             </div>
           </div>
-        )
-      })}
-    </>
+        </>
+      )}
+    </div>
   )
 }
 
