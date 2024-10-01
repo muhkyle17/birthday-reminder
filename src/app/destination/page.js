@@ -49,19 +49,20 @@ const tabs = [
 
 const HoverMiniTab = () => {
   const [activeTab, setActiveTab] = useState(1)
-  console.log(activeTab, 'activeTab')
-
   const tabContent = tabs.find(tab => tab.id === activeTab)
+
   return (
     <div className='flex flex-row gap-28'>
       {activeTab && (
         <>
-          <Image src={tabContent?.image} />
+          <Image src={tabContent?.image} alt={`${tabContent.label} Image`} />
           <div className='flex flex-col'>
             <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
               {tabs.map(tab => (
                 <p
-                  className={`cursor-pointer ${activeTab === tabContent.id ? '' : ''}`}
+                  className={`cursor-pointer pb-3 transition-all duration-700 border-b-2 ${
+                    activeTab === tab.id ? 'border-white' : 'border-transparent'
+                  }`}
                   onMouseEnter={() => setActiveTab(tab.id)}>
                   {tab.label}
                 </p>
