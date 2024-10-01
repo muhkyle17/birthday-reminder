@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import Navbar from '@/components/Navbar'
 import Moon from '../../../public/destination/image-moon.png'
@@ -55,8 +56,14 @@ const HoverMiniTab = () => {
     <div className='flex flex-row gap-28'>
       {activeTab && (
         <>
-          <Image src={tabContent?.image} alt={`${tabContent.label} Image`} />
-          <div className='flex flex-col'>
+          <motion.div
+            initial={{ opacity: 0, x: -150 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
+            className='w-1/2'>
+            <Image src={tabContent?.image} alt={`${tabContent.label} Image`} />
+          </motion.div>
+          <div className='flex flex-col w-1/2'>
             <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
               {tabs.map(tab => (
                 <p
