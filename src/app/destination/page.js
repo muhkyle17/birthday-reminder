@@ -57,16 +57,19 @@ const HoverMiniTab = () => {
       {activeTab && (
         <>
           <motion.div
+            key={activeTab}
             initial={{ opacity: 0, x: -150 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
+            transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
             className='w-1/2'>
             <Image src={tabContent?.image} alt={`${tabContent.label} Image`} />
           </motion.div>
+
           <div className='flex flex-col w-1/2'>
             <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
               {tabs.map(tab => (
                 <p
+                  key={tab.id}
                   className={`cursor-pointer pb-3 transition-all duration-700 border-b-2 ${
                     activeTab === tab.id ? 'border-white' : 'border-transparent'
                   }`}
