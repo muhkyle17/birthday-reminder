@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import Logo from '../../public/shared/logo.svg'
 import NavMobile from '@/components/NavMobile'
@@ -28,6 +31,11 @@ const navigation = [
 ]
 
 const Navbar = () => {
+  const pathname = usePathname()
+  const dynamicRouter = item => {
+    if (pathname === item) return 'border-b-2 border-b-white py-8 mt-1'
+  }
+
   return (
     <div className='px-10 pt-7 md:pt-0 md:px-0 flex flex-row w-full items-center justify-between'>
       <div className='w-1/6 xl:w-1/2 flex flex-row items-center justify-center lg:justify-between lg:pl-16'>
@@ -49,11 +57,16 @@ const Navbar = () => {
 
         <div className='flex flex-row items-center gap-10 uppercase'>
           {navigation.map(item => {
+            const hello = dynamicRouter(item.href)
+            console.log(hello, 'hello')
+
             return (
               <Link
                 key={item.id}
                 href={item.href}
-                className='nav-button flex flex-row gap-2 items-baseline'>
+                className={`border-b-2 border-transparent hover:border-b-2 hover:border-b-white py-8 duration-500 transition-all mt-1 ${dynamicRouter(
+                  item.href
+                )} flex flex-row gap-2 items-baseline`}>
                 <span className='typography-preset-eight font-bold'>{item.id}</span>
                 {item.name}
               </Link>
