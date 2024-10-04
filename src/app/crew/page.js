@@ -74,8 +74,8 @@ const HoverMiniTab = () => {
 
           <motion.div
             key={activeTab}
-            initial={{ opacity: 0, x: 0 }}
-            animate={{ opacity: 1, x: -50 }}
+            initial={{ opacity: 0, x: 150 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
             className='w-1/2 bg-red-400'>
             <Image src={tabContent?.image} alt={`${tabContent.name} Image`} />
