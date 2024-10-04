@@ -12,39 +12,35 @@ import AnoushehAnsari from '../../../public/crew/image-anousheh-ansari.png'
 const tabs = [
   {
     id: 1,
-    label: 'Moon ',
+    label: 'Douglas Hurley',
+    position: 'Commander',
     description:
-      'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.',
+      'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.',
     image: DouglasHurley,
-    avgDistance: '384,400',
-    estTravelTime: 3,
   },
   {
     id: 2,
-    label: 'Mars',
+    label: 'Mark Shuttleworth',
+    position: 'Mission Specialist',
     description:
-      'Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!',
+      'Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.',
     image: MarkShuttleworth,
-    avgDistance: '225 Mil.',
-    estTravelTime: 9,
   },
   {
     id: 3,
-    label: 'Europa',
+    label: 'Victor Glover',
+    position: 'Pilot',
     description:
       'The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.',
     image: VictorGlover,
-    avgDistance: '628 Mil.',
-    estTravelTime: 3,
   },
   {
     id: 4,
-    label: 'Titan',
+    label: 'Anousheh Ansari',
+    position: 'Flight Engineer',
     description:
-      'The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.',
+      'Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.',
     image: AnoushehAnsari,
-    avgDistance: '1.6 Bil.',
-    estTravelTime: 7,
   },
 ]
 
@@ -86,25 +82,6 @@ const HoverMiniTab = () => {
             </p>
 
             <div className='mt-10 bg-[#ffffff8a] h-[0.5px]' />
-
-            <div className='lg:mt-8 uppercase flex flex-col md:flex-row gap-12 md:gap-20'>
-              <div className='flex flex-col gap-8'>
-                <p className='text-center md:text-left typography-preset-seven text-secondary'>
-                  Avg. Distance
-                </p>
-                <p className='text-center md:text-left typography-preset-six'>
-                  {tabContent.avgDistance} km
-                </p>
-              </div>
-              <div className='flex flex-col gap-8'>
-                <p className='text-center md:text-left typography-preset-seven text-secondary'>
-                  Est. Travel Time
-                </p>
-                <p className='text-center md:text-left typography-preset-six'>
-                  {tabContent.estTravelTime} days
-                </p>
-              </div>
-            </div>
           </div>
         </>
       )}
