@@ -53,7 +53,7 @@ const HoverMiniTab = () => {
   const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
-    <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-28 bg//-green-400'>
+    <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-28'>
       {activeTab && (
         <>
           <motion.div
@@ -61,7 +61,7 @@ const HoverMiniTab = () => {
             initial={{ opacity: 0, x: -150 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
-            className='w-1/2 bg//-blue-400'>
+            className='w-1/2'>
             <Image src={tabContent?.image} alt={`${tabContent.label} Image`} />
           </motion.div>
 
@@ -81,13 +81,13 @@ const HoverMiniTab = () => {
 
             <h1 className='typography-preset-two uppercase mt-10'>{tabContent.label}</h1>
 
-            <p className='typography-preset-nine text-secondary w-full text-center lg:text-left'>
+            <p className='typography-preset-nine py-2 text-secondary w-full text-center lg:text-left'>
               {tabContent.description}
             </p>
 
             <div className='mt-10 bg-[#ffffff8a] h-[0.5px]' />
 
-            <div className='lg:mt-12 uppercase flex flex-col md:flex-row gap-12 md:gap-20'>
+            <div className='lg:mt-8 uppercase flex flex-col md:flex-row gap-12 md:gap-20'>
               <div className='flex flex-col gap-8'>
                 <p className='text-center md:text-left typography-preset-seven text-secondary'>
                   Avg. Distance
@@ -118,7 +118,7 @@ const Destination = () => {
       <div className='flex flex-col items-start pt-0 lg:pt-10 w-screen lg:h-screen'>
         <Navbar />
 
-        <div className='container mx-auto pb-20 lg:px-20 xl:px-40 mt-10 lg:mt-20 flex flex-col items-center gap-10 lg:gap-24'>
+        <div className='container mx-auto pb-20 lg:px-20 xl:px-40 mt-10 lg:mt-14 flex flex-col items-center gap-10 lg:gap-24'>
           <p className='uppercase typography-preset-eight sm:typography-preset-five flex flex-row gap-6 lg:self-start'>
             <span className='font-bold text-[#ffffff5f]'>01</span>
             Pick your destination
