@@ -49,11 +49,11 @@ const HoverMiniTab = () => {
   const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
-    <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-28'>
+    <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-22'>
       {activeTab && (
         <>
-          <div className='flex flex-col items-center lg:items-start w-[70%] lg:w-1/2 bg-orange-400//'>
-            <h1 className='typography-preset-two uppercase mt-10'>{tabContent.name}</h1>
+          <div className='flex flex-col items-center lg:items-start w-[80%]'>
+            <h1 className='typography-preset-three uppercase w-full'>{tabContent.name}</h1>
 
             <p className='typography-preset-nine py-2 text-secondary w-full text-center lg:text-left'>
               {tabContent.description}
@@ -77,7 +77,7 @@ const HoverMiniTab = () => {
             initial={{ opacity: 0, x: 150 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
-            className='w-1/2 bg-red-400'>
+            className='w-2/5//'>
             <Image src={tabContent?.image} alt={`${tabContent.name} Image`} />
           </motion.div>
         </>
@@ -92,7 +92,7 @@ const Crew = () => {
       <div className='flex flex-col items-start pt-0 lg:pt-10 w-screen lg:h-screen'>
         <Navbar />
 
-        <div className='container mx-auto pb-20 lg:px-20 xl:px-40 mt-10 lg:mt-14 flex flex-col items-center gap-10 lg:gap-24'>
+        <div className='container mx-auto mb-20 lg:px-20 xl:px-40 mt-10 lg:mt-14 flex flex-col items-center gap-10'>
           <p className='uppercase typography-preset-eight sm:typography-preset-five flex flex-row gap-6 lg:self-start'>
             <span className='font-bold text-[#ffffff5f]'>02</span>
             Meet your crew
