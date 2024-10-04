@@ -49,22 +49,30 @@ const HoverMiniTab = () => {
   const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
-    <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-22'>
+    <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-22 lg:max-h-[60vh] lg:h-[60vh]'>
       {activeTab && (
         <>
-          <div className='flex flex-col items-center lg:items-start w-[80%]'>
-            <h1 className='typography-preset-three uppercase w-full'>{tabContent.name}</h1>
+          <div className='relative flex flex-col items-center lg:items-start w-[80%] h-full'>
+            <div className='flex flex-col items-center mt-20'>
+              <h2 className='typography-preset-four uppercase w-full text-[#ffffff50] h-10  '>
+                {tabContent.position}
+              </h2>
 
-            <p className='typography-preset-nine py-2 text-secondary w-full text-center lg:text-left'>
-              {tabContent.description}
-            </p>
+              <h1 className='typography-preset-three line-height-4 uppercase w-full'>
+                {tabContent.name}
+              </h1>
 
-            <div className='flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
+              <p className='typography-preset-nine py-2 text-secondary w-full text-center lg:text-left'>
+                {tabContent.description}
+              </p>
+            </div>
+
+            <div className='absolute bottom-0 left-0 flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
               {tabs.map(tab => (
                 <div
                   key={tab.id}
-                  className={`cursor-pointer pb-3 transition-all duration-700 bg-white  w-3 h-3 rounded-full ${
-                    activeTab === tab.id ? 'border-white' : 'border-transparent'
+                  className={`cursor-pointer pb-3 transition-all duration-500 w-3 h-3 rounded-full ${
+                    activeTab === tab.id ? 'bg-white' : 'bg-gray-500'
                   }`}
                   onMouseEnter={() => setActiveTab(tab.id)}
                 />
