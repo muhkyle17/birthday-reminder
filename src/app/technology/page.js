@@ -42,8 +42,8 @@ const HoverMiniTab = () => {
   // const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
-    <div className='flex flex-row w-full h-full border-2 border-blue-400'>
-      <div className='w-1/2 flex flex-row items-center justify-start gap-14 border-2 border-teal-500'>
+    <div className='flex flex-row w-full h-full'>
+      <div className='w-1/2 flex flex-row items-center justify-start gap-14'>
         <div className='flex flex-col gap-10'>
           <p className='flex items-center justify-center p-8 typography-preset-four border border-white rounded-full'>
             1
@@ -66,7 +66,7 @@ const HoverMiniTab = () => {
           </p>
         </div>
       </div>
-      <div className='w-1/2 flex items-center justify-end border-2 border-red-900'>
+      <div className='w-1/2 flex items-center justify-end'>
         <Image src={LaunchVehiclePortrait} alt={`Picture`} />
       </div>
     </div>
@@ -79,7 +79,7 @@ const Technology = () => {
       <div className='flex flex-col items-start pt-0 lg:pt-10 w-screen lg:h-screen'>
         <Navbar />
 
-        <div className='container ml-auto mb-20 pl-10 lg:pl-20 xl:pl-0 mt-10 lg:mt-14 flex flex-col items-center gap-10 h-full border-2 border-orange-400'>
+        <div className='container ml-auto mb-20 pl-10 lg:pl-20 xl:pl-0 mt-10 lg:mt-14 flex flex-col items-center gap-10 h-full'>
           <p className='uppercase typography-preset-eight sm:typography-preset-five flex flex-row gap-6 md:self-start'>
             <span className='font-bold text-[#ffffff5f]'>03</span>
             Space Launch 101
