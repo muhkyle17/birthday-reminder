@@ -56,7 +56,9 @@ const HoverMiniTab = () => {
                 <p
                   key={tab.id}
                   onMouseEnter={() => setActiveTab(tab.id)}
-                  className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full cursor-pointer hover:bg-white hover:text-primary transition-all duration-500'>
+                  className={`${
+                    activeTab === tab.id ? 'bg-white text-primary' : 'bg-transparent'
+                  } flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full cursor-pointer hover:bg-white hover:text-primary transition-all duration-500`}>
                   {tab.id}
                 </p>
               )
