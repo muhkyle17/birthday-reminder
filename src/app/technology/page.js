@@ -45,13 +45,13 @@ const HoverMiniTab = () => {
     <div className='flex flex-row w-full h-full'>
       <div className='w-1/2 flex flex-row items-center justify-start gap-14'>
         <div className='flex flex-col gap-10'>
-          <p className='flex items-center justify-center p-8 typography-preset-four border border-white rounded-full'>
+          <p className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full'>
             1
           </p>
-          <p className='flex items-center justify-center p-8 typography-preset-four border border-white rounded-full'>
+          <p className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full'>
             2
           </p>
-          <p className='flex items-center justify-center p-8 typography-preset-four border border-white rounded-full'>
+          <p className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full'>
             3
           </p>
         </div>
