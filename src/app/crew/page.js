@@ -49,7 +49,7 @@ const HoverMiniTab = () => {
   const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
-    <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-22 lg:max-h-[60vh] lg:h-[60vh]'>
+    <div className='flex flex-col items-center justify-center mt-10 lg:mt-0 lg:flex-row gap-10 xl:gap-22 lg:max-h-[60vh] lg:h-[60vh]'>
       {activeTab && (
         <>
           <div className='relative flex flex-col items-center justify-center lg:justify-start lg:items-start lg:w-[80%] h-full'>
