@@ -52,9 +52,9 @@ const HoverMiniTab = () => {
     <div className='flex flex-col items-center justify-center lg:flex-row gap-10 xl:gap-22 lg:max-h-[60vh] lg:h-[60vh]'>
       {activeTab && (
         <>
-          <div className='relative flex flex-col items-center lg:items-start w-[80%] h-full'>
-            <div className='flex flex-col items-center mt-20'>
-              <h2 className='typography-preset-four uppercase w-full text-[#ffffff50] h-10  '>
+          <div className='relative flex flex-col items-center justify-center lg:justify-start lg:items-start lg:w-[80%] h-full'>
+            <div className='flex flex-col items-center text-center lg:text-left lg:mt-20 mb-10 lg:mb-0'>
+              <h2 className='typography-preset-four uppercase w-full text-[#ffffff50] h-10'>
                 {tabContent.position}
               </h2>
 
@@ -67,7 +67,7 @@ const HoverMiniTab = () => {
               </p>
             </div>
 
-            <div className='absolute bottom-0 left-0 flex flex-row gap-10 typography-preset-eight text-secondary uppercase'>
+            <div className='absolute bottom-0 left-0 flex flex-row justify-center lg:justify-start gap-10 typography-preset-eight text-secondary uppercase w-full'>
               {tabs.map(tab => (
                 <div
                   key={tab.id}
@@ -84,8 +84,8 @@ const HoverMiniTab = () => {
             key={activeTab}
             initial={{ opacity: 0, x: 150 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}
-            className='w-2/5//'>
+            className='w-2/5 lg:w-auto'
+            transition={{ type: 'tween', duration: 1, ease: 'easeInOut' }}>
             <Image src={tabContent?.image} alt={`${tabContent.name} Image`} />
           </motion.div>
         </>
@@ -100,8 +100,8 @@ const Crew = () => {
       <div className='flex flex-col items-start pt-0 lg:pt-10 w-screen lg:h-screen'>
         <Navbar />
 
-        <div className='container mx-auto mb-20 lg:px-20 xl:px-40 mt-10 lg:mt-14 flex flex-col items-center gap-10'>
-          <p className='uppercase typography-preset-eight sm:typography-preset-five flex flex-row gap-6 lg:self-start'>
+        <div className='container mx-auto mb-20 px-10 lg:px-20 xl:px-40 mt-10 lg:mt-14 flex flex-col items-center gap-10'>
+          <p className='uppercase typography-preset-eight sm:typography-preset-five flex flex-row gap-6 md:self-start'>
             <span className='font-bold text-[#ffffff5f]'>02</span>
             Meet your crew
           </p>
