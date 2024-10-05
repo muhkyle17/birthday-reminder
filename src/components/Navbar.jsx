@@ -57,9 +57,6 @@ const Navbar = () => {
 
         <div className='flex flex-row items-center gap-10 uppercase'>
           {navigation.map(item => {
-            const hello = dynamicRouter(item.href)
-            console.log(hello, 'hello')
-
             return (
               <Link
                 key={item.id}
