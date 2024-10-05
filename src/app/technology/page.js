@@ -1,4 +1,6 @@
 'use client'
+import { useState } from 'react'
+import Image from 'next/image'
 
 import Navbar from '@/components/Navbar'
 import LaunchVehiclePortrait from '../../../public/technology/image-launch-vehicle-portrait.jpg'
@@ -14,18 +16,24 @@ const tabs = [
     technology: 'Launch Vehicle',
     description:
       "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
+    imagePortrait: LaunchVehiclePortrait,
+    imageLandscape: LaunchVehicleLandscape,
   },
   {
     id: 2,
     technology: 'Spaceport',
     description:
       'A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.',
+    imagePortrait: SpaceportPortrait,
+    imageLandscape: SpaceportLandscape,
   },
   {
     id: 3,
     technology: 'Space Capsule',
     description:
       "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
+    imagePortrait: SpaceCapsulePortrait,
+    imageLandscape: SpaceCapsuleLandscape,
   },
 ]
 
@@ -34,8 +42,33 @@ const HoverMiniTab = () => {
   // const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
-    <div>
-      <p>Hover Mini Tab</p>
+    <div className='flex flex-row w-full h-full border-2 border-blue-400'>
+      <div className='w-1/2 flex flex-row items-center justify-start gap-14 border-2 border-teal-500'>
+        <div className='flex flex-col gap-10'>
+          <p className='flex items-center justify-center p-8 typography-preset-four border border-white rounded-full'>
+            1
+          </p>
+          <p className='flex items-center justify-center p-8 typography-preset-four border border-white rounded-full'>
+            2
+          </p>
+          <p className='flex items-center justify-center p-8 typography-preset-four border border-white rounded-full'>
+            3
+          </p>
+        </div>
+        <div className='flex flex-col gap-10'>
+          <h1 className='typography-preset-four text-[#ffffff5f]'>THE TERMINOLOGY…</h1>
+          <h2 className='typography-preset-three'>SPACE CAPSULE</h2>
+          <p className='typography-preset-nine'>
+            {`A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to
+            reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your
+            time during the flight. It includes a space gym, cinema, and plenty of other activities
+            to keep you entertained.`}
+          </p>
+        </div>
+      </div>
+      <div className='w-1/2 flex items-center justify-end border-2 border-red-900'>
+        <Image src={LaunchVehiclePortrait} alt={`Picture`} />
+      </div>
     </div>
   )
 }
@@ -46,9 +79,9 @@ const Technology = () => {
       <div className='flex flex-col items-start pt-0 lg:pt-10 w-screen lg:h-screen'>
         <Navbar />
 
-        <div className='container mx-auto mb-20 px-10 lg:px-20 xl:px-40 mt-10 lg:mt-14 flex flex-col items-center gap-10'>
+        <div className='container ml-auto mb-20 pl-10 lg:pl-20 xl:pl-0 mt-10 lg:mt-14 flex flex-col items-center gap-10 h-full border-2 border-orange-400'>
           <p className='uppercase typography-preset-eight sm:typography-preset-five flex flex-row gap-6 md:self-start'>
-            <span className='font-bold text-[#ffffff5f]'>02</span>
+            <span className='font-bold text-[#ffffff5f]'>03</span>
             Space Launch 101
           </p>
 
