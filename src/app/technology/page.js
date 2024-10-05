@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 import Navbar from '@/components/Navbar'
@@ -37,14 +37,36 @@ const tabs = [
   },
 ]
 
+let width
+let height
+
+if (typeof window !== 'undefined') {
+  width = window.innerWidth
+  height = window.innerHeight
+}
+
 const HoverMiniTab = () => {
   const [activeTab, setActiveTab] = useState(1)
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: width,
+    height: height,
+  })
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  console.log(windowDimensions, 'windowDimensions')
+
   const tabContent = tabs.find(tab => tab.id === activeTab)
-
-  const height = window.innerHeight
-  const width = window.innerWidth
-
-  console.log(height, width)
 
   return (
     <div className='flex flex-row w-full h-full'>
