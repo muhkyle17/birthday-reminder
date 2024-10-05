@@ -93,6 +93,10 @@ body {
   .nav-button {
     @apply border-b-2 border-transparent hover:border-b-2 hover:border-b-white py-8 duration-500 transition-all mt-1;
   }
+
+  .line-height-4 {
+    @apply leading-none !important;
+  }
 }
 
 .responsive-font-size {
