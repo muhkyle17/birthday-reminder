@@ -41,6 +41,11 @@ const HoverMiniTab = () => {
   const [activeTab, setActiveTab] = useState(1)
   const tabContent = tabs.find(tab => tab.id === activeTab)
 
+  const height = window.innerHeight
+  const width = window.innerWidth
+
+  console.log(height, width)
+
   return (
     <div className='flex flex-row w-full h-full'>
       {activeTab && (
