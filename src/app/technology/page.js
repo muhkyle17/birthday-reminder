@@ -39,35 +39,33 @@ const tabs = [
 
 const HoverMiniTab = () => {
   const [activeTab, setActiveTab] = useState(1)
-  // const tabContent = tabs.find(tab => tab.id === activeTab)
+  const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
     <div className='flex flex-row w-full h-full'>
-      <div className='w-1/2 flex flex-row items-center justify-start gap-14'>
-        <div className='flex flex-col gap-10'>
-          <p className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full'>
-            1
-          </p>
-          <p className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full'>
-            2
-          </p>
-          <p className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full'>
-            3
-          </p>
+      {activeTab && (
+        <div className='w-1/2 flex flex-row items-center justify-start gap-14'>
+          <div className='flex flex-col gap-10'>
+            {tabs.map(tab => {
+              return (
+                <p
+                  key={tab.id}
+                  onMouseEnter={() => setActiveTab(tab.id)}
+                  className='flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full cursor-pointer hover:bg-white hover:text-primary transition-all duration-500'>
+                  {tab.id}
+                </p>
+              )
+            })}
+          </div>
+          <div className='flex flex-col gap-10'>
+            <h1 className='typography-preset-four text-[#ffffff5f]'>THE TERMINOLOGY…</h1>
+            <h2 className='typography-preset-three uppercase'>{tabContent.technology}</h2>
+            <p className='typography-preset-nine'>{tabContent.description}</p>
+          </div>
         </div>
-        <div className='flex flex-col gap-10'>
-          <h1 className='typography-preset-four text-[#ffffff5f]'>THE TERMINOLOGY…</h1>
-          <h2 className='typography-preset-three'>SPACE CAPSULE</h2>
-          <p className='typography-preset-nine'>
-            {`A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to
-            reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your
-            time during the flight. It includes a space gym, cinema, and plenty of other activities
-            to keep you entertained.`}
-          </p>
-        </div>
-      </div>
+      )}
       <div className='w-1/2 flex items-center justify-end'>
-        <Image src={LaunchVehiclePortrait} alt={`Picture`} />
+        <Image src={tabContent.imagePortrait} alt={`Picture`} />
       </div>
     </div>
   )
