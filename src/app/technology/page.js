@@ -106,7 +106,14 @@ const Technology = () => {
       <div className='flex flex-col items-start pt-0 lg:pt-10 w-screen lg:h-screen'>
         <Navbar />
 
-        <div className='container ml-auto mb-20 pl-10 lg:pl-20 xl:pl-0 mt-10 lg:mt-14 flex flex-col items-center gap-10 h-full'>
+        <div
+          className='
+            container mx-auto flex flex-col items-center gap-10 h-full
+            mt-10 px-24
+            lg:mt-14
+            xl:mx-0 xl:ml-auto xl:px-0
+            2xl:px-28 2xl:mx-auto
+          '>
           <p className='uppercase typography-preset-eight sm:typography-preset-five flex flex-row gap-6 md:self-start'>
             <span className='font-bold text-[#ffffff5f]'>03</span>
             Space Launch 101
