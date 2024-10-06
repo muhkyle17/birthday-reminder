@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 
 import Navbar from '@/components/Navbar'
@@ -47,32 +47,13 @@ if (typeof window !== 'undefined') {
 
 const HoverMiniTab = () => {
   const [activeTab, setActiveTab] = useState(1)
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: width,
-    height: height,
-  })
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  console.log(windowDimensions, 'windowDimensions')
-
   const tabContent = tabs.find(tab => tab.id === activeTab)
 
   return (
-    <div className='flex flex-row w-full h-full'>
+    <div className='flex flex-col-reverse lg:flex-row items-center justify-center w-full h-full gap-12'>
       {activeTab && (
-        <div className='w-1/2 flex flex-row items-center justify-start gap-14'>
-          <div className='flex flex-col gap-10'>
+        <div className='w-full lg:w-1/2 flex flex-col lg:flex-row items-center justify-start gap-14'>
+          <div className='flex lg:flex-col gap-10'>
             {tabs.map(tab => {
               return (
                 <p
@@ -80,20 +61,26 @@ const HoverMiniTab = () => {
                   onMouseEnter={() => setActiveTab(tab.id)}
                   className={`${
                     activeTab === tab.id ? 'bg-white text-primary' : 'bg-transparent'
-                  } flex items-center justify-center w-20 h-20 typography-preset-four border border-white rounded-full cursor-pointer hover:bg-white hover:text-primary transition-all duration-500`}>
+                  } flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 typography-preset-four border border-white rounded-full cursor-pointer hover:bg-white hover:text-primary transition-all duration-500`}>
                   {tab.id}
                 </p>
               )
             })}
           </div>
-          <div className='flex flex-col gap-10'>
-            <h1 className='typography-preset-four text-[#ffffff5f]'>THE TERMINOLOGY…</h1>
-            <h2 className='typography-preset-three uppercase'>{tabContent.technology}</h2>
-            <p className='typography-preset-nine'>{tabContent.description}</p>
+          <div className='flex flex-col gap-5 lg:gap-10'>
+            <h1 className='typography-preset-five md:typography-preset-four text-center lg:text-left line-height-4 text-[#ffffff5f]'>
+              THE TERMINOLOGY…
+            </h1>
+            <h2 className='typography-preset-four md:typography-preset-three text-center lg:text-left line-height-4 uppercase'>
+              {tabContent.technology}
+            </h2>
+            <p className='typography-preset-nine text-center lg:text-left'>
+              {tabContent.description}
+            </p>
           </div>
         </div>
       )}
-      <div className='w-1/2 flex items-center justify-end'>
+      <div className='w-full lg:w-1/2 flex items-center justify-center xl:justify-end'>
         <Image src={tabContent.imagePortrait} alt={`Picture`} />
       </div>
     </div>
@@ -108,9 +95,9 @@ const Technology = () => {
 
         <div
           className='
-            container mx-auto flex flex-col items-center gap-10 h-full
-            mt-10 px-24
-            lg:mt-14
+            container flex flex-col items-center gap-10 h-full
+            mx-auto mb-10 mt-10 px-6
+            lg:mt-14 lg:px-12
             xl:mx-0 xl:ml-auto xl:px-0
             2xl:px-28 2xl:mx-auto
           '>
