@@ -26,7 +26,7 @@ export default function Home() {
           <div className='flex items-center justify-center mt-0 md:mt-3 lg:mt-0 xl:justify-end xl:pr-10 sm:w-1/2'>
             <motion.a
               whileHover={{ scale: 1.0 }}
-              href='/'
+              href='/destination'
               className='relative rounded-full cursor-pointer typography-preset-four bg-white uppercase text-primary w-[200px] h-[200px] md:w-[272px] md:h-[272px] flex items-center justify-center'>
               <motion.div
                 whileHover={{ scale: 1.4 }}
